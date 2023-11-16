@@ -24,7 +24,11 @@ struct ResultModel: Codable {
     let type: TypeEnumModel
     let difficulty: DifficultyModel
     let question, correctAnswer: String
-    let incorrectAnswers: [String]
+    var  incorrectAnswers: [String]?
+    var  givenAnswer = ""
+    var  isAnswered = false
+    var  selectedOption = 0
+    var  correctAnswerIndex = 0
 
     enum CodingKeys: String, CodingKey {
         case category, type, difficulty, question

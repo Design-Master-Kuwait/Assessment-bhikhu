@@ -1,6 +1,6 @@
 //
 //  Localizable.swift
-//  Trendal
+//Trivia Quiz
 //
 //  Created by Bhikhu on 20/11/22.
 //
@@ -11,6 +11,10 @@ import UIKit
 struct Localizable {
 
     
+    struct Title {
+        static let btnFinish  =   "Finish".localized
+        
+    }
     
     struct AlertMsg {
         static let noNetwork  =   "You are not connected to the internet".localized

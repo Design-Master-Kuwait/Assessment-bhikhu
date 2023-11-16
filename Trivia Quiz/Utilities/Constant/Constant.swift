@@ -48,5 +48,5 @@ class Constant {
     static let DEVICE_SCREEN_WIDTH =  MAIN_SCREEN.bounds.width
     static let DEVICE_SCREEN_HEIGHT =  MAIN_SCREEN.bounds.height
   
+    
 }
-

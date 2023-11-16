@@ -13,8 +13,13 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: AppImage.background.rawValue) ?? UIImage())
     }
-    
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self is QuestionVC {
+            self.navigationItem.hidesBackButton = true
+        }
+        
+    }
 }

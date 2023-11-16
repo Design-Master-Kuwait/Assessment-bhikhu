@@ -31,7 +31,7 @@ class AlertMesage: NSObject {
             view.titleLabel?.textColor = UIColor.white
             
         case .warning:
-            view.configureTheme(backgroundColor: UIColor.Color.primaryOrange, foregroundColor: .white, iconImage: iconStyle.image(theme: .warning), iconText: nil)
+            view.configureTheme(backgroundColor: UIColor.Color.redInCorrectAnswer, foregroundColor: .white, iconImage: iconStyle.image(theme: .warning), iconText: nil)
             view.iconImageView?.image = view.iconImageView?.image!.withRenderingMode(.alwaysTemplate)
             view.iconImageView?.tintColor = UIColor.red
             view.titleLabel?.text = "Warning"
@@ -52,8 +52,8 @@ class AlertMesage: NSObject {
         }
         
         // Set Font
-        view.titleLabel?.font = UIFont.adobeCleanUXRegular(size: FontSize.mediaum.rawValue)
-        view.bodyLabel?.font = UIFont.adobeCleanUXRegular(size: FontSize.regular.rawValue)
+        view.titleLabel?.font = UIFont.quicksandRegular(size: FontSize.mediaum.rawValue)
+        view.bodyLabel?.font = UIFont.quicksandRegular(size: FontSize.regular.rawValue)
         //
         // Set Shadow
         view.configureDropShadow()
@@ -111,7 +111,7 @@ class AlertMesage: NSObject {
                               buttonTitle: nil,
                               buttonTapHandler: { _ in SwiftMessages.hide() })
         
-        view.configureTheme(backgroundColor: UIColor.Color.primaryOrange,
+        view.configureTheme(backgroundColor: UIColor.Color.redInCorrectAnswer,
                             foregroundColor: .white,
                             iconImage: nil,
                             iconText: nil)
@@ -120,7 +120,7 @@ class AlertMesage: NSObject {
         view.bodyLabel?.numberOfLines = 2
         
         // Set Font
-        view.bodyLabel?.font = UIFont.adobeCleanUXRegular(size: FontSize.regular.rawValue)
+        view.bodyLabel?.font = UIFont.quicksandRegular(size: FontSize.regular.rawValue)
         // Button
         view.button?.isHidden = true
         

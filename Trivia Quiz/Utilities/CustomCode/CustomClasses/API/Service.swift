@@ -21,7 +21,7 @@ enum Service {
     case login(param: [String: Any])
     
     // Get celebrity
-    case getQuestion
+    case getQuestion(param: [String: Any])
     
 }
 
@@ -32,8 +32,8 @@ extension Service: TargetType {
     var task: Task {
 
         switch self {
-        case   .getQuestion:
-            return .requestPlain
+        case   .getQuestion(let param):
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
             
         case .login(let param):
         return .requestParameters(parameters: param, encoding: JSONEncoding.default)
@@ -62,7 +62,7 @@ extension Service: TargetType {
             return "email_login"
             
         case .getQuestion:
-            return "celebrity"
+            return ""
        
         }
     }

@@ -13,6 +13,11 @@ target 'Trivia Quiz' do
   #pod for ProgressBar
   #https://github.com/SVProgressHUD/SVProgressHUD
   pod 'SVProgressHUD','2.2.5'
+  
+  
+  #pod for timer counter UI
+  #https://github.com/rsrbk/SRCountdownTimer
+  pod 'SRCountdownTimer','1.3'
 
 end
 

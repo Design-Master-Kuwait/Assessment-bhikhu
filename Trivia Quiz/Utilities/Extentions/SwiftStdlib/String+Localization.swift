@@ -27,4 +27,19 @@ extension String {
         // Get the Local String for Key and return it
         return langBundle?.localizedString(forKey: self, value: "", table: nil) ?? self
     }
+    
+    /// String with no spaces or new lines in beginning and end.
+    ///
+    ///     "This is your String!\n ".isBlank      // Returns This is your String!
+    ///
+    var trimmed: String {
+        return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+    
+    /// Remove spacial charterot  from string
+    var removeSpecialCharsFromString: String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_")
+        return self.filter {okayChars.contains($0) }
+    }
+
 }

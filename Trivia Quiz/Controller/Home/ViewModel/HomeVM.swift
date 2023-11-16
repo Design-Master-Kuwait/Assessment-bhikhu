@@ -8,13 +8,36 @@
 import Foundation
 import UIKit
 
-class AuthVM {
+class HomeVM {
 
+    private var amount: Int!
+    private var category: Int = 0
+    private var difficulty: String!
+    private var type: String!
+        
+    /// Save Level Selection Data
+    /// - Parameters:
+    ///   - amount: Int count of questions
+    ///   - category: Int level category whic we will get from api of catefory selection
+    ///   - difficulty: string  diffilcult lebel which is easy , mediaum , hard
+    ///   - type: string  type like multiple and true  false
+    public func saveLevelSelectionData(amount: Int, category: Int,difficulty: String,type: String ) {
+        self.amount = amount
+        self.category = category
+        self.difficulty = difficulty
+        self.type = type
+    }
+    
     // webservice call for get Quiz Qustions
     public func callWSGetQuestion(completion: @escaping ((QuestionModel?, Bool) -> Void)) {
         var param: [String: Any] = [:]
-        let service = Service.login(param: param)
-        Network.request(target: service, isSilent: true, resultType: QuestionModel.self) { (result) in
+        param[API.Key.amount]  = self.amount
+        param[API.Key.category]  = self.category
+        param[API.Key.difficulty]  = self.difficulty
+        param[API.Key.type]  = self.type
+        
+        let service = Service.getQuestion(param: param)
+        Network.request(target: service, isSilent: false, resultType: QuestionModel.self) { (result) in
             switch result {
             case .success(let response, let success):
                 if success {

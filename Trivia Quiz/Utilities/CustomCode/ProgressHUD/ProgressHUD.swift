@@ -10,8 +10,6 @@ import SVProgressHUD
 class ProgressHUD {
     
     class func show() {
-        //        self.displaySpinner()
-        SVProgressHUD.setBackgroundColor(UIColor.white)
         SVProgressHUD.show()
     }
     class func hide() {
@@ -37,7 +35,5 @@ class ProgressHUD {
         }
     }
     
-    private class func removeSpinner() {
-        SVProgressHUD.dismiss()
-    }
+   
 }

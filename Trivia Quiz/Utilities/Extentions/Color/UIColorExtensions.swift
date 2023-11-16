@@ -28,9 +28,11 @@ public extension UIColor {
     /// The Structure for defining the colors for the Button
     struct Color {
         
-        static let primaryOrange = UIColor(named: "primaryOrange")!
+        static let greenCorrectAnswer = UIColor(named: "greenCorrectAnswer") ?? UIColor.white
+        static let redInCorrectAnswer = UIColor(named: "redInCorrectAnswer") ?? UIColor.white
         
-
+        static let clear = UIColor.clear
+        
     }
 }
 

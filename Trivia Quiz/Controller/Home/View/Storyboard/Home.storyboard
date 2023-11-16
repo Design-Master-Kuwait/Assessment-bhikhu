@@ -1,42 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BAZ-1W-I9S">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Regular.otf">
+            <string>Quicksand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--HomeVC-->
+        <!--Navigation Controller-->
+        <scene sceneID="gWZ-eR-bCc">
+            <objects>
+                <navigationController id="BAZ-1W-I9S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R7r-nK-H4l">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="S83-4r-TiS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="is5-Eh-Gol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1391" y="3"/>
+        </scene>
+        <!--Level SelectionVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeVC" customModule="Trivia_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelSelectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LevelSelectionVC" customModule="Trivia_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-Hq-Ikm">
-                                <rect key="frame" x="175" y="367" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the difficulty for questions " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="tQV-iG-M8A" customClass="AppBaseLabel" customModule="Trivia_Quiz" customModuleProvider="target">
+                                <rect key="frame" x="16" y="61.999999999999993" width="361" height="108.33333333333331"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorText">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelFontType">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5C-B0-9dh">
+                                <rect key="frame" x="29" y="170.33333333333334" width="335" height="511.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="i6j-1K-nPL">
+                                        <rect key="frame" x="50" y="19.999999999999972" width="235" height="491.33333333333326"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fET-np-kYi" customClass="BaseButton" customModule="Trivia_Quiz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="235" height="137"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
+                                                <state key="normal" title="EASY" image="i_easy">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTextolor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeBold" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnSelectionTappped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NCA-yv-8rX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1H-a6-MHc" customClass="BaseButton" customModule="Trivia_Quiz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="176.99999999999994" width="235" height="137.33333333333331"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title=" MEDIUM" image="ic_medium">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeBold" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnSelectionTappped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0bp-JK-Uya"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-m9-XXN" customClass="BaseButton" customModule="Trivia_Quiz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354.33333333333326" width="235" height="137"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="55" maxY="0.0"/>
+                                                <state key="normal" title="HARD" image="ic_hard">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeItalic" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeBold" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnSelectionTappped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yg4-72-hV6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="i6j-1K-nPL" secondAttribute="bottom" id="1wv-Sw-FXk"/>
+                                    <constraint firstItem="i6j-1K-nPL" firstAttribute="leading" secondItem="A5C-B0-9dh" secondAttribute="leading" constant="50" id="Y8c-xV-C2B"/>
+                                    <constraint firstAttribute="trailing" secondItem="i6j-1K-nPL" secondAttribute="trailing" constant="50" id="sBN-lg-R3o"/>
+                                    <constraint firstItem="i6j-1K-nPL" firstAttribute="top" secondItem="A5C-B0-9dh" secondAttribute="top" constant="20" id="xDB-T9-bc9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tQV-iG-M8A" secondAttribute="trailing" constant="16" id="7He-6J-AQd"/>
+                            <constraint firstItem="tQV-iG-M8A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="BbP-Tk-vZX"/>
+                            <constraint firstItem="A5C-B0-9dh" firstAttribute="top" secondItem="tQV-iG-M8A" secondAttribute="bottom" id="G7Y-YN-Cdw"/>
+                            <constraint firstItem="A5C-B0-9dh" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.6" id="Z6P-K3-fbZ"/>
+                            <constraint firstItem="A5C-B0-9dh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hRK-Ty-XJ6"/>
+                            <constraint firstItem="A5C-B0-9dh" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="qXk-CF-Xdd"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VCH-U9-DaQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="-2"/>
+            <point key="canvasLocation" x="-682" y="3"/>
+        </scene>
+        <!--QuestionVC-->
+        <scene sceneID="osV-bS-GQW">
+            <objects>
+                <viewController storyboardIdentifier="QuestionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKS-ei-2ZX" customClass="QuestionVC" customModule="Trivia_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j9o-qV-HyT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-rY-wYZ">
+                                <rect key="frame" x="16" y="748" width="361" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-c5-VMc" customClass="BaseViewMain" customModule="Trivia_Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX/25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrP-RV-eCP" customClass="AppBaseLabel" customModule="Trivia_Quiz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="60"/>
+                                                <color key="backgroundColor" red="0.22745098039215686" green="0.1764705882352941" blue="0.56470588235294117" alpha="0.4942231514" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="labelFontType">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.1764705882" blue="0.56470588239999997" alpha="0.4942231514" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HrP-RV-eCP" secondAttribute="bottom" id="LiJ-Md-BRj"/>
+                                            <constraint firstItem="HrP-RV-eCP" firstAttribute="top" secondItem="dxW-c5-VMc" secondAttribute="top" id="Xwh-NR-cLN"/>
+                                            <constraint firstAttribute="trailing" secondItem="HrP-RV-eCP" secondAttribute="trailing" id="rZA-vy-q0s"/>
+                                            <constraint firstItem="HrP-RV-eCP" firstAttribute="leading" secondItem="dxW-c5-VMc" secondAttribute="leading" id="sAW-Vh-4e4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullCorners" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="redius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-xh-PxC" customClass="BaseButton" customModule="Trivia_Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="192.66666666666663" y="0.0" width="168.33333333333337" height="60"/>
+                                        <color key="backgroundColor" red="0.22745098039215686" green="0.1764705882352941" blue="0.56470588235294117" alpha="0.4942231514" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="25"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                <color key="value" red="0.2274509804" green="0.1764705882" blue="0.56470588239999997" alpha="0.4942231514" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRounded">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeItalic" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isLargeBold" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnNextTapped:" destination="cKS-ei-2ZX" eventType="touchUpInside" id="mtF-eS-lJ5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="f67-Px-lFd"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-fM-2au" customClass="SRCountdownTimer" customModule="SRCountdownTimer">
+                                <rect key="frame" x="146.66666666666666" y="69" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="RYu-Dt-z8A"/>
+                                    <constraint firstAttribute="height" constant="100" id="yja-cr-jxv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.22622901200000001" green="0.17632243040000001" blue="0.56341916319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                        <color key="value" systemColor="systemPurpleColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trailLineColor">
+                                        <color key="value" red="0.54117647059999996" green="0.70980392160000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ooD-8y-bZJ">
+                                <rect key="frame" x="0.0" y="179" width="393" height="559"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x9w-pI-EvM">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cKS-ei-2ZX" id="N0f-AN-ovF"/>
+                                    <outlet property="delegate" destination="cKS-ei-2ZX" id="R1U-hd-NHi"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZKq-92-seC"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="ZKq-92-seC" firstAttribute="bottom" secondItem="ypv-rY-wYZ" secondAttribute="bottom" constant="10" id="2VV-UZ-TKj"/>
+                            <constraint firstItem="1lR-fM-2au" firstAttribute="centerX" secondItem="j9o-qV-HyT" secondAttribute="centerX" id="Fip-Zp-bYf"/>
+                            <constraint firstItem="ooD-8y-bZJ" firstAttribute="top" secondItem="1lR-fM-2au" secondAttribute="bottom" constant="10" id="QL1-Y2-ynA"/>
+                            <constraint firstItem="ypv-rY-wYZ" firstAttribute="top" secondItem="ooD-8y-bZJ" secondAttribute="bottom" constant="10" id="SQN-2b-NFM"/>
+                            <constraint firstAttribute="trailing" secondItem="ooD-8y-bZJ" secondAttribute="trailing" id="Yo7-RN-CMN"/>
+                            <constraint firstItem="ypv-rY-wYZ" firstAttribute="leading" secondItem="j9o-qV-HyT" secondAttribute="leading" constant="16" id="cQb-xf-okB"/>
+                            <constraint firstItem="1lR-fM-2au" firstAttribute="top" secondItem="ZKq-92-seC" secondAttribute="top" constant="10" id="gET-Ty-GYS"/>
+                            <constraint firstItem="ooD-8y-bZJ" firstAttribute="leading" secondItem="j9o-qV-HyT" secondAttribute="leading" id="hkT-Wy-q8F"/>
+                            <constraint firstAttribute="trailing" secondItem="ypv-rY-wYZ" secondAttribute="trailing" constant="16" id="vqA-cx-0It"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="glb-Ts-bIe"/>
+                    <connections>
+                        <outlet property="btnNext" destination="kv1-xh-PxC" id="owl-kV-RFw"/>
+                        <outlet property="collectionOptions" destination="ooD-8y-bZJ" id="fpf-uF-UkX"/>
+                        <outlet property="lblCurrentQuestion" destination="HrP-RV-eCP" id="Jz5-8e-VeN"/>
+                        <outlet property="viewCounter" destination="1lR-fM-2au" id="EeU-Yw-m46"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHn-W6-yjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="3"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="i_easy" width="75" height="75"/>
+        <image name="ic_hard" width="75" height="75"/>
+        <image name="ic_medium" width="75" height="75"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
