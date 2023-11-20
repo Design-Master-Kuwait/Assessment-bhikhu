@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3382D8615A38041A89A2B3A1 /* Pods_Trivia_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340B37276B09C09058ED0E9D /* Pods_Trivia_Quiz.framework */; };
+		C14B369B2B08D2DF000CD05D /* EndGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B369A2B08D2DF000CD05D /* EndGameVC.swift */; };
 		C1750A732AEA362200D31107 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1750A722AEA362200D31107 /* AppDelegate.swift */; };
 		C1750A752AEA362200D31107 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1750A742AEA362200D31107 /* SceneDelegate.swift */; };
 		C1750A7C2AEA362300D31107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1750A7B2AEA362300D31107 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		1B7E62D53653C2695384D63D /* Pods-Trivia Quiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia Quiz.debug.xcconfig"; path = "Target Support Files/Pods-Trivia Quiz/Pods-Trivia Quiz.debug.xcconfig"; sourceTree = "<group>"; };
 		340B37276B09C09058ED0E9D /* Pods_Trivia_Quiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trivia_Quiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955CF6418DEC02245844E5BD /* Pods-Trivia Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia Quiz.release.xcconfig"; path = "Target Support Files/Pods-Trivia Quiz/Pods-Trivia Quiz.release.xcconfig"; sourceTree = "<group>"; };
+		C14B369A2B08D2DF000CD05D /* EndGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameVC.swift; sourceTree = "<group>"; };
 		C1750A6F2AEA362200D31107 /* Trivia Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivia Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1750A722AEA362200D31107 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1750A742AEA362200D31107 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				C1E69F442AEA9A1B0082BDC1 /* LevelSelectionVC.swift */,
 				C1E69F7A2AEFB7740082BDC1 /* QuestionVC.swift */,
+				C14B369A2B08D2DF000CD05D /* EndGameVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				C1E69F3D2AEA91210082BDC1 /* ErrorModel.swift in Sources */,
 				C1750AA62AEA488200D31107 /* Network.swift in Sources */,
 				C1E69F332AEA82360082BDC1 /* Localizable.swift in Sources */,
+				C14B369B2B08D2DF000CD05D /* EndGameVC.swift in Sources */,
 				C1750A732AEA362200D31107 /* AppDelegate.swift in Sources */,
 				C1E69F2A2AEA52330082BDC1 /* AlertMesage.swift in Sources */,
 				C1E69F6E2AEF82E60082BDC1 /* PageControl.swift in Sources */,

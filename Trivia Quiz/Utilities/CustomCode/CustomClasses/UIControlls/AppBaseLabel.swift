@@ -20,6 +20,7 @@ class AppBaseLabel: UILabel {
         case largeRegular = 5
         case largeBold = 6
         case bold20 = 7
+        case bold50 = 8
         
     }
     
@@ -120,7 +121,13 @@ class AppBaseLabel: UILabel {
             font = UIFont.quicksandBold(size: FontSize.largeItalic.rawValue)
         case .bold20:
             font = UIFont.quicksandBold(size: FontSize.large.rawValue)
-        }
+        
+        case .bold50:
+            font = UIFont.quicksandBold(size: FontSize.lableLarge.rawValue)
+        
+    
+    }
+        
         
         self.textColor = colorText
         if isLabelRounded {

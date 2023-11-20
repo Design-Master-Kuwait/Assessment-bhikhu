@@ -20,13 +20,16 @@ class LevelSelectionVC: BaseViewController, StoryboardSceneBased {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     // action method on question selection click
     /// - Parameter sender: object of button
     @IBAction func btnSelectionTappped(_ sender: BaseButton) {
         switch sender.tag {
         case GameLevel.easy.rawValue:
-            homeVM.saveLevelSelectionData(amount: 20, category: 10, difficulty: GameDifficultLevel.easy.rawValue, type: GameTypes.multiple.rawValue)
+            homeVM.saveLevelSelectionData(amount: 20, category: 10, difficulty: GameLevel.easy.title(), type: GameTypes.multiple.rawValue)
+        case GameLevel.medium.rawValue:
+            homeVM.saveLevelSelectionData(amount: 20, category: 10, difficulty: GameLevel.medium.title(), type: GameTypes.multiple.rawValue)
+        case GameLevel.hard.rawValue:
+            homeVM.saveLevelSelectionData(amount: 20, category: 10, difficulty: GameLevel.hard.title(), type: GameTypes.multiple.rawValue)
         default:
             break
         }

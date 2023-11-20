@@ -4,9 +4,7 @@
 //
 //  Created by Hetu on 01/11/23.
 //
-
 import UIKit
-
 class QuestionCell: UICollectionViewCell, NibReusable  {
     
     // MARK: - IB Outlets
@@ -30,12 +28,11 @@ class QuestionCell: UICollectionViewCell, NibReusable  {
         lblOptions[2].text = object.incorrectAnswers?[2]
         lblOptions[3].text = object.incorrectAnswers?[3]
         if object.isAnswered {
-            
-            for obj in viewOption  {
-                if obj.tag == object.correctAnswerIndex {
-                    obj.backgroundColor = UIColor.Color.greenCorrectAnswer
+            for option in viewOption  {
+                if option.tag == object.correctAnswerIndex {
+                    option.backgroundColor = UIColor.Color.greenCorrectAnswer
                 } else {
-                    obj.backgroundColor = UIColor.Color.clear
+                    option.backgroundColor = UIColor.Color.clear
                 }
             }
             viewOption[object.selectedOption].backgroundColor = lblOptions[object.selectedOption].text == object.correctAnswer ? UIColor.Color.greenCorrectAnswer : UIColor.Color.redInCorrectAnswer

@@ -79,6 +79,8 @@ enum FontSize: CGFloat {
     
     case largeButtonTitle = 35
     
+    case lableLarge = 50
+    
     
 }
 

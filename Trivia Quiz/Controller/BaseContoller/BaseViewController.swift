@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self is QuestionVC {
+        if self is QuestionVC || self is EndGameVC {
             self.navigationItem.hidesBackButton = true
         }
         

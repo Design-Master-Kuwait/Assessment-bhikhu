@@ -16,23 +16,26 @@ class QuestionVC: BaseViewController , StoryboardSceneBased {
     
     // MARK: - IBOutlet
     @IBOutlet weak var btnNext: BaseButton!
+    @IBOutlet weak var lblAvalableGameLife: AppBaseLabel!
     @IBOutlet weak var lblCurrentQuestion: AppBaseLabel!
     @IBOutlet weak var collectionOptions: UICollectionView!
     @IBOutlet weak var viewCounter: SRCountdownTimer!
     
-    var arrQuestion: [ResultModel]? 
-    var questionNumber: Int = 0
-    var intScore: Int?
+    var arrQuestion: [ResultModel]?
+    private var questionNumber: Int = 0
+    private var intScore = 0 /// for handle all score in will increase when correct andswer and seelct anser match
+    private var isFinishGame = false // inittialy game start with false once all questio filled or game life close then it goes to  true
+    private var intGameLife = 3 // totan number  of life in game 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureOnViewDidLoad()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    
     // MARK: - Private Methods
     private func configureOnViewDidLoad() {
         setupQuestionArray()
@@ -46,14 +49,19 @@ class QuestionVC: BaseViewController , StoryboardSceneBased {
         viewCounter.lineWidth = 4
         viewCounter.delegate = self
         resetTimer()
+        setGamelife()
     }
     
-    func resetTimer(){
+    private func resetTimer(){
         viewCounter.reset()
         viewCounter.start(beginingValue: 30, interval: 1)
         lblCurrentQuestion.text = "\(questionNumber + 1)/\(arrQuestion?.count ?? 0)"
     }
-
+    
+    /// for showing game life UI
+    private func setGamelife(){
+        lblAvalableGameLife.text = String(intGameLife)
+    }
     /// setup question array we are gettign only 3 question in incorrect answer array so we need to append correct answer in random form
    private func setupQuestionArray()  {
        for i in 0..<(arrQuestion?.count ?? 0) {
@@ -73,30 +81,43 @@ class QuestionVC: BaseViewController , StoryboardSceneBased {
     @IBAction func btnNextTapped(_ sender: Any) {
         nextQuestionUI()
     }
+    
+    ///  next Questions UI setup
     func nextQuestionUI() {
-        if questionNumber >= arrQuestion?.count ?? 0 {
-            
+        if isFinishGame{ // refirect to end game screen with score
+            let controller = EndGameVC.instantiate()
+            controller.intSvore = intScore
+            self.pushVC(controller: controller)
         } else {
             if questionNumber < (arrQuestion?.count ?? 0)  - 1{
                 questionNumber += 1
                 collectionOptions.scrollToItem(at:IndexPath(item: questionNumber, section: 0), at: .right, animated: false)
                 resetTimer()
-            } else {
-                btnNext.setTitle(Localizable.Title.btnFinish, for: .normal)
+            } else { /// game finish
+                gameOversetup()
             }
         }
     }
     
+    /// Game Life Caluculcation
+    private func gameLifeCount(){
+        self.intGameLife -= 1
+        if self.intGameLife == 0 {
+            gameOversetup() 
+        }
+        self.setGamelife()
+    }
+    private func gameOversetup(){
+        btnNext.setTitle(Localizable.Title.btnFinish, for: .normal)
+        self.isFinishGame = true
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-extension QuestionVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+extension QuestionVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return arrQuestion?.count ?? 0
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
     UICollectionViewCell {
         let aQuestionCell: QuestionCell = collectionOptions.dequeueReusableCell(for: indexPath)
@@ -108,15 +129,19 @@ extension QuestionVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
                     objQuestion.givenAnswer = selectdAnswer
                     objQuestion.selectedOption = selectedOption
                     self.arrQuestion?[indexPath.row] = objQuestion
+                    if objQuestion.correctAnswer == selectdAnswer {
+                        self.intScore += 1
+                    } else {
+                        self.gameLifeCount()
+                    }
                     self.collectionOptions.reloadItems(at: [indexPath])
                 }
             }
         }
         return aQuestionCell
     }
-    
+  
 }
-
 // MARK: - SRCountdownTimerDelegate
 extension QuestionVC: SRCountdownTimerDelegate{
     func timerDidEnd(sender: SRCountdownTimer, elapsedTime: TimeInterval) {
