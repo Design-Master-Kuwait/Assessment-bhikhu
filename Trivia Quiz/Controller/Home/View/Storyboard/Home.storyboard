@@ -318,7 +318,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNH-kU-fE5">
                                 <rect key="frame" x="50" y="468" width="293" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_score" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-IS-pXY">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_Score" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-IS-pXY">
                                         <rect key="frame" x="0.0" y="0.0" width="293" height="300"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uSm-J8-TuT">
@@ -423,7 +423,7 @@
         <image name="ic_hard" width="75" height="75"/>
         <image name="ic_medium" width="75" height="75"/>
         <image name="ic_restart" width="126" height="126"/>
-        <image name="icon_score" width="258" height="195"/>
+        <image name="icon_Score" width="258" height="195"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

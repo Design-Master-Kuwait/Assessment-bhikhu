@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Moya (= 15.0.0)
-  - SRCountdownTimer
+  - SRCountdownTimer (= 1.3)
   - SVProgressHUD (= 2.2.5)
 
 SPEC REPOS:
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   SRCountdownTimer: b7f833a51cd33003d55df17667b71d26ee17357f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 785061773c7ac67e9d51f29b75ff844264b1eb43
+PODFILE CHECKSUM: 9d63cdbd1f72ac2b5cc1cffdfafc71a8e05cb39f
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.14.3
